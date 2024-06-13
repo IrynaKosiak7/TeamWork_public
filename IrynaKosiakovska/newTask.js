@@ -3,3 +3,9 @@ db.users.aggregate([
     { $count: 'total_users_is_not_blocked' }
 
 ])
+
+// or
+
+db.users.countDocuments(
+    { is_blocked: { $ne: true }  }
+)
